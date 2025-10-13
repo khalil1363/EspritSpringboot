@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Getter
@@ -13,6 +14,15 @@ import java.util.Date;
 public class Reservation {
     @Id
     private String idReservation;
+
     private Date anneeUniversitaire;
     private boolean estValide;
+
+    @ManyToMany(mappedBy = "reservations")
+    private List<Etudiant> etudiants;
+
+    @ManyToOne
+    @JoinColumn(name = "chambre_id")
+    private Chambre chambre;
+
 }

@@ -3,6 +3,8 @@ package com.example.fraykhalil4sae10.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -15,4 +17,10 @@ public class Bloc {
 
     private String nomBloc;
     private long capaciteBloc;
+
+    @ManyToOne
+     Foyer foyer;
+
+    @OneToMany(mappedBy = "bloc")
+     List<Chambre> chambres;
 }

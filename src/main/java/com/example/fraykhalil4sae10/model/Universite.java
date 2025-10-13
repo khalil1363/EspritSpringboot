@@ -14,4 +14,7 @@ public class Universite {
     private Long idUniversite;
     private String nomUniversite;
     private String adresse;
+
+    @OneToOne
+    Foyer foyer;
 }
