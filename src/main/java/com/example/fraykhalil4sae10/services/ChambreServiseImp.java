@@ -2,6 +2,7 @@ package com.example.fraykhalil4sae10.services;
 
 
 import com.example.fraykhalil4sae10.model.Chambre;
+import com.example.fraykhalil4sae10.model.TypeChambre;
 import com.example.fraykhalil4sae10.repository.ChambreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,4 +40,28 @@ public class ChambreServiseImp implements IchambreServise {
         return chambreRepository.findAll();
     }
 
+    @Override
+    public List<Chambre> findByNumeroChambreAndTypechambre(long numero, TypeChambre type) {
+        return chambreRepository.findByNumeroChambreAndTypechambre(numero, type);
+    }
+
+    @Override
+    public List<Chambre> findByNumeroChambreOrTypechambre(long numero, TypeChambre type) {
+        return chambreRepository.findByNumeroChambreOrTypechambre(numero, type);
+    }
+
+
+    @Override
+    public List<Chambre> findByNumeroChambreGreaterThan(long numero) {
+        return chambreRepository.findByNumeroChambreGreaterThan(numero);
+    }
+
+    @Override
+    public List<Chambre> findByNumeroChambreBetween(long min, long max) {
+        return chambreRepository.findByNumeroChambreBetween(min, max);
+    }
+    @Override
+    public List<Chambre> findByTypeStartingWith(String prefix) {
+        return chambreRepository.findByTypechambreStartingWith(prefix);
+    }
 }

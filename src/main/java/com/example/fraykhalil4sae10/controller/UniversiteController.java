@@ -14,12 +14,12 @@ public class UniversiteController {
 
     private final IUniversiteService universiteService;
 
-    @PostMapping("/ajouter")
+    @PostMapping("/add")
     public Universite ajouterUniversite(@RequestBody Universite universite) {
         return universiteService.addUniversite(universite);
     }
 
-    @PutMapping("/modifer")
+    @PutMapping("/update")
     public Universite modifierUniversite(@RequestBody Universite universite) {
         return universiteService.updateUniversite(universite);
     }

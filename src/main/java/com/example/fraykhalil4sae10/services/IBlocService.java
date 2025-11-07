@@ -10,4 +10,8 @@ public interface IBlocService {
     void deleteBloc(Long id);
     Bloc getBlocById(Long id);
     List<Bloc> allBlocs();
+    Bloc findByNomBloc(String nomBloc);
+    List<Bloc> findByNomBlocContaining(String nomPart);
+    List<Bloc> findByCapaciteBlocLessThan(long capacite);
+    List<Bloc> findByCapaciteBlocBetween(long min, long max);
 }
