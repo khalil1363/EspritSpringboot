@@ -10,4 +10,10 @@ public interface IEtudiantService {
     void deleteEtudiant(Long id);
     Etudiant getEtudiantById(Long id);
     List<Etudiant> allEtudiants();
+
+    List<Etudiant> getByNom(String nom);
+
+
+
+    List<Etudiant> getEtudiantsByEcoleNative(String ecole);
 }

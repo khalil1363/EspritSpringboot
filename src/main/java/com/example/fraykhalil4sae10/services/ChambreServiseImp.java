@@ -64,4 +64,15 @@ public class ChambreServiseImp implements IchambreServise {
     public List<Chambre> findByTypeStartingWith(String prefix) {
         return chambreRepository.findByTypechambreStartingWith(prefix);
     }
+
+
+    @Override
+    public List<Chambre> getChambresByTypeAndBloc(TypeChambre type, String nomBloc) {
+        return chambreRepository.findChambresByTypeAndBloc(type, nomBloc);
+    }
+
+    @Override
+    public List<Chambre> getChambresDisponiblesNative() {
+        return chambreRepository.findChambresDisponiblesNative();
+    }
 }

@@ -1,5 +1,6 @@
 package com.example.fraykhalil4sae10.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import java.util.List;
@@ -20,9 +21,11 @@ public class Chambre {
     private TypeChambre typechambre;
 
 
+
     @OneToMany
     private List<Reservation> reservations;
 
+    @JsonIgnore
     @ManyToOne
     private Bloc bloc;
 

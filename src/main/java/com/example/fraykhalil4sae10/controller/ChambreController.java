@@ -66,6 +66,14 @@ public class ChambreController {
         return chambreService.findByTypeStartingWith(prefix);
     }
 
-
-
+    @GetMapping("/type-bloc")
+    public List<Chambre> getChambresByTypeAndBloc(
+            @RequestParam TypeChambre type,
+            @RequestParam String nomBloc) {
+        return chambreService.getChambresByTypeAndBloc(type, nomBloc);
+    }
+    @GetMapping("/disponibles-native")
+    public List<Chambre> getChambresDisponiblesNative() {
+        return chambreService.getChambresDisponiblesNative();
+    }
 }

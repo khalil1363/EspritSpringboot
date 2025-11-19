@@ -1,6 +1,7 @@
 package com.example.fraykhalil4sae10.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import java.util.List;
@@ -21,6 +22,7 @@ public class Bloc {
     @ManyToOne
      Foyer foyer;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "bloc")
      List<Chambre> chambres;
 }

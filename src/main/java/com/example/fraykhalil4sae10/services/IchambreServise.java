@@ -16,4 +16,11 @@ public interface IchambreServise {
     List<Chambre> findByNumeroChambreGreaterThan(long numero);
     List<Chambre> findByNumeroChambreBetween(long min, long max);
     List<Chambre> findByTypeStartingWith(String prefix);
+
+    List<Chambre> getChambresByTypeAndBloc(TypeChambre type, String nomBloc);
+
+
+
+    List<Chambre> getChambresDisponiblesNative();
+
 }

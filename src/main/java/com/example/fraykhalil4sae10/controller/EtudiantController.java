@@ -37,4 +37,13 @@ public class EtudiantController {
     public List<Etudiant> getAllEtudiants() {
         return etudiantService.allEtudiants();
     }
-}
+        @GetMapping("/nom")
+        public List<Etudiant> getByNom(@RequestParam String nom) {
+            return etudiantService.getByNom(nom);
+        }
+
+    @GetMapping("/ecole-native")
+    public List<Etudiant> getEtudiantsByEcoleNative(@RequestParam String ecole) {
+        return etudiantService.getEtudiantsByEcoleNative(ecole);
+    }
+    }
